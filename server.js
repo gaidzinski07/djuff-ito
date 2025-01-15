@@ -9,7 +9,7 @@ const io = new Server(server);
 app.use(express.static('public')); // Servir arquivos estáticos (frontend)
 
 // Variável para armazenar a posição atual da bola
-let ballPosition = { x: 0, y: 0 };
+let ballPosition = { x: 200, y: 200 };
 
 io.on('connection', (socket) => {
   console.log('A user connected:', socket.id);
