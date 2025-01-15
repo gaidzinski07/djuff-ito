@@ -14,24 +14,32 @@ function drawBall() {
 }
 
 document.getElementById('left').addEventListener('click', () => {
-    socket.emit('joystick-input', { dx: -10, dy: 0 });
+    ball.x -= 10;
+    socket.emit('joystick-input', { x: ball.x, y: ball.y });
+    drawBall();
 });
 
 document.getElementById('up').addEventListener('click', () => {
-    socket.emit('joystick-input', { dx: 0, dy: -10 });
+    ball.y -= 10;
+    socket.emit('joystick-input', { x: ball.x, y: ball.y });
+    drawBall();
 });
 
 document.getElementById('down').addEventListener('click', () => {
-    socket.emit('joystick-input', { dx: 0, dy: 10 });
+    ball.y += 10;
+    socket.emit('joystick-input', { x: ball.x, y: ball.y });
+    drawBall();
 });
 
 document.getElementById('right').addEventListener('click', () => {
-    socket.emit('joystick-input', { dx: 10, dy: 0 });
+    ball.x += 10;
+    socket.emit('joystick-input', { x: ball.x, y: ball.y });
+    drawBall();
 });
 
 socket.on('update-position', (data) => {
-    ball.x += data.dx;
-    ball.y += data.dy;
+    ball.x = data.x;
+    ball.y = data.y;
     drawBall();
 });
 
