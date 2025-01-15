@@ -37,10 +37,23 @@ document.getElementById('right').addEventListener('click', () => {
     drawBall();
 });
 
+canvas.addEventListener('click', function(event) {
+    const rect = canvas.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    ball.x = x;
+    ball.y = y;
+    socket.emit('joystick-input', { x: ball.x, y: ball.y });
+    drawBall();
+});
+
+
 socket.on('update-position', (data) => {
     ball.x = data.x;
     ball.y = data.y;
     drawBall();
 });
+
+
 
 drawBall();
