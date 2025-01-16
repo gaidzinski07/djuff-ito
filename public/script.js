@@ -22,6 +22,7 @@ function drawBalls() {
 //EVENTOS DE CLICK JOYSTICK
 document.getElementById('left').addEventListener('click', () => {
     users.get(socket.id).x -= 10;
+    users.get(socket.id).x = users.get(socket.id).x < 0 ? 0 : users.get(socket.id).x;
 
     socket.emit('joystick-input', { id: socket.id, x: users.get(socket.id).x, y: users.get(socket.id).y });
     drawBalls();
@@ -29,6 +30,7 @@ document.getElementById('left').addEventListener('click', () => {
 
 document.getElementById('up').addEventListener('click', () => {
     users.get(socket.id).y -= 10;
+    users.get(socket.id).y = users.get(socket.id).y < 0 ? 0 : users.get(socket.id).y;
 
     socket.emit('joystick-input', { id: socket.id, x: users.get(socket.id).x, y: users.get(socket.id).y });
     drawBalls();
@@ -36,6 +38,7 @@ document.getElementById('up').addEventListener('click', () => {
 
 document.getElementById('down').addEventListener('click', () => {
     users.get(socket.id).y += 10;
+    users.get(socket.id).y = users.get(socket.id).y > 400 ? 400 : users.get(socket.id).y;
 
     socket.emit('joystick-input', { id: socket.id, x: users.get(socket.id).x, y: users.get(socket.id).y });
     drawBalls();
@@ -43,6 +46,7 @@ document.getElementById('down').addEventListener('click', () => {
 
 document.getElementById('right').addEventListener('click', () => {
     users.get(socket.id).x += 10;
+    users.get(socket.id).x = users.get(socket.id).x > 400 ? 400 : users.get(socket.id).x;
 
     socket.emit('joystick-input', { id: socket.id, x: users.get(socket.id).x, y: users.get(socket.id).y });
     drawBalls();
