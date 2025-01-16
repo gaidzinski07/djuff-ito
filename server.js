@@ -15,7 +15,7 @@ io.on('connection', (socket) => {
   console.log('Um usuário conectou:', socket.id);
 
   // Adiciona um objeto para o usuário recém conectado com um círculo em (200,200) com uma cor aleatória
-  users.set(socket.id, {id: socket.id, x: 200, y: 200, color:`rgb(${Math.random() * 255/2}, ${Math.random() * 255}, ${Math.random() * 255})`});
+  users.set(socket.id, {id: socket.id, x: 200, y: 200, color:`rgb(${Math.random() * 200/2 + 50} , ${Math.random() * 255 + 25}, ${Math.random() * 155 + 10})`});
 
   // Enviar a posição atual dos círculos para o novo usuário
   socket.emit('update-position', Array.from(users.entries()));

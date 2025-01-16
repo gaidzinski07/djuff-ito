@@ -12,6 +12,12 @@ function drawBalls() {
     //desenha todos os círculos
     users.forEach((value) => {
         ctx.beginPath();
+        ctx.arc(value.x + 5, value.y + 5, 25, 0, Math.PI * 2);
+        ctx.fillStyle = 'black';
+        ctx.fill();
+        ctx.closePath();
+
+        ctx.beginPath();
         ctx.arc(value.x, value.y, 25, 0, Math.PI * 2);
         ctx.fillStyle = value.color;
         ctx.fill();
