@@ -33,7 +33,6 @@ io.on('connection', (socket) => {
   
   // Evento para terminar uma conversa entre dois clientes
   socket.on('end-conversation', (data) => {
-    console.log(data.starter, "parou de conversar com", data.receiver);
     conversations.delete(data.starter);
     conversations.delete(data.receiver);
     // Notifica todos os usuários do término da conversa

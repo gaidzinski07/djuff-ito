@@ -8,7 +8,6 @@ let talkingTo = undefined;
 
 // Função para desenhar todos os círculos
 function drawBalls() {
-    console.log(users); //debug
 
     ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpa o canvas uma vez antes de desenhar todas os círculos
     // Desenha todos os círculos
@@ -63,7 +62,6 @@ function searchProximity(){
 
     // Termina a conversa se o usuário sair de proximidade
     if(talkingTo != undefined && !foundTalk){
-        console.log(talkingTo);
         socket.emit('end-conversation', { starter: socket.id, receiver:  talkingTo });
     }
 }
