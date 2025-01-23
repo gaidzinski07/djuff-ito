@@ -42,7 +42,7 @@ O sistema conecta um celular e um computador via WebSockets:
 
 #### **1. Clone o Repositório**
 ```bash
-git clone https://github.com/seu-usuario/joystick-websocket.git
+git clone https://github.com/RD-Rafael/projetoRedesBackEnd
 cd joystick-websocket
 ```
 
