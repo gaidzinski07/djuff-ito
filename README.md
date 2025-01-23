@@ -83,9 +83,9 @@ Para encontrar o IP do servidor:
    Quatro botões (esquerda, direita, cima, baixo) permitem enviar comandos ao servidor.
 
 ## Autoria
-Arthur Octário Vellasco
-Leon Stevans Farias de Souza 
-Rafael Rocha Damasceno
+- Arthur Octário Vellasco
+- Leon Stevans Farias de Souza 
+- Rafael Rocha Damasceno
 
    
 
