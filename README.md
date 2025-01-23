@@ -43,7 +43,6 @@ O sistema conecta um celular e um computador via WebSockets:
 #### **1. Clone o Repositório**
 ```bash
 git clone https://github.com/RD-Rafael/projetoRedesBackEnd
-cd joystick-websocket
 ```
 
 #### **2. Instale as Dependências**
