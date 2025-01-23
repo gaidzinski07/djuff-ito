@@ -8,7 +8,8 @@ Este projeto demonstra a comunicação em tempo real entre dois dispositivos uti
 1. [Descrição do Projeto](#descrição-do-projeto)  
 2. [Tecnologias Utilizadas](#tecnologias-utilizadas)  
 3. [Como Executar o Projeto](#como-executar-o-projeto)  
-4. [Demonstração](#demonstração)  
+4. [Demonstração](#demonstração)
+5. [Autoria](#autoria)
 
 ---
 
@@ -80,6 +81,11 @@ Para encontrar o IP do servidor:
     A posição da bolinha será atualizada conforme os inputs enviados pelo celular.
 3. Interface do Celular
    Quatro botões (esquerda, direita, cima, baixo) permitem enviar comandos ao servidor.
+
+## Autoria
+Arthur Octário Vellasco
+Leon Stevans Farias de Souza 
+Rafael Rocha Damasceno
 
    
 
