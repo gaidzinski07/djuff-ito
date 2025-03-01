@@ -1,37 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joystick WebSocket</title>
-    <style>
-        body {
-            background-color: #023047;
-        }
-        canvas {
-            border: 1px solid black;
-            display: block;
-            margin: auto;
-            background-color: #219ebc;
-        }
-        .joystick {
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
+    <title>DJUFF - D'ito</title>
+    <link rel="stylesheet" href="styles.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const socket = io();
+
+      // Quando o servidor enviar uma mensagem
+      socket.on('message', (msg) => {
+        console.log('Mensagem do servidor: ', msg);
+        gerarCarta(msg);
+      });
+    });
+  </script>
 </head>
 <body>
-    <canvas id="gameCanvas" width="400" height="400"></canvas>
-    <div class="joystick">
-        <button id="left">Left</button>
-        <button id="up">Up</button>
-        <button id="down">Down</button>
-        <button id="right">Right</button>
+    <div class="cartas-container" id="cartasContainer">
+        <div class="carta" id="carta">
+            <span class="valor" id="valor">
+                100
+            </span>
+        </div>
     </div>
-    <div id="nearUsers">
-    </div>
-    <div id = "chat"></div>
-    <script src="/socket.io/socket.io.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
